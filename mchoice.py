@@ -25,7 +25,7 @@ def generate_choices(correct, all_items):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python3 multiplechoice.py bopomofo.csv")
+        print("Usage: python3 mchoice.py bopomofo.csv")
         return
 
     file_path = sys.argv[1]
