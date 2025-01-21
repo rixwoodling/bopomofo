@@ -1,6 +1,7 @@
 import csv
 import random
 import os
+import sys
 
 def clear_screen():
     # Clear the terminal screen based on the operating system
@@ -13,7 +14,11 @@ def load_csv(file_path):
         return list(reader)
 
 def main():
-    file_path = 'bopomofo.csv'
+    if len(sys.argv) != 2:
+        print("Usage: python3 flashcards.py bopomofo.csv")
+        return
+
+    file_path = sys.argv[1]
     try:
         data = load_csv(file_path)
         if not data:
@@ -27,11 +32,8 @@ def main():
             print(item[1])
             input()
 
-    except FileNotFoundError:
-        return
     except Exception:
         return
 
 if __name__ == "__main__":
     main()
-
